@@ -1,6 +1,8 @@
 import { ApolloProvider } from "@apollo/react-hooks";
 import { ApolloClient , InMemoryCache} from '@apollo/client';
 import Posts from './Posts';
+import Profile from "./Profile";
+//import 'react-bootstrap';
 
 const client = new ApolloClient({
   uri: "http://localhost:8000/?graphql",
@@ -10,7 +12,8 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
+      <div className="p-5">
+        <Profile/>
         <Posts />
       </div>
     </ApolloProvider>
